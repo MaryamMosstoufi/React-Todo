@@ -53,7 +53,7 @@ class App extends React.Component {
     };
     this.setState({
       tasks: [...this.state.tasks, newTask]
-    });
+    }, () => { localStorage.setItem('tasks', JSON.stringify(this.state.tasks)) });
   };
 
   toggleTask = taskId => {
